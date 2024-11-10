@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: nullnull-db.ctu6g48uwdhd.ap-northeast-2.rds.amazonaws.com?serverTimezone=Asia/Seoul
+    username: admin
+    password: yso3865def
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
