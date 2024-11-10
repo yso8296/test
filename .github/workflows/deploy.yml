@@ -49,4 +49,3 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nullnull-server:latest
             docker run -d --name nullnull-server -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/nullnull-server:latest
             
-            
