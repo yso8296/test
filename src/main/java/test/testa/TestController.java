@@ -42,17 +42,6 @@ public class TestController {
         }
     }
 
-    // 파일 삭제 API
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteFile(@RequestParam("fileName") String fileName) {
-        try {
-            s3Uploader.removeS3File(fileName);
-            return ResponseEntity.ok("파일이 삭제되었습니다.");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("파일 삭제에 실패했습니다.");
-        }
-    }
-
     // MultipartFile을 File로 변환하는 유틸리티 메서드
     private File convertMultipartFileToFile(MultipartFile file) throws IOException {
         File convFile = new File(System.getProperty("java.io.tmpdir") + "/" + file.getOriginalFilename());
