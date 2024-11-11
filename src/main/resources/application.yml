@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://nullnull-db.ctu6g48uwdhd.ap-northeast-2.rds.amazonaws.com:3306/webdb?serverTimezone=Asia/Seoul
+    username: admin
+    password: yso3865def
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  servlet:
+    multipart:
+      enabled: true
+      location: /home/ec2-user/upload
+      max-request-size: 30MB
+      max-file-size: 10MB
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
+    s3:
+      bucket: nullnull-bucket
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+
+org:
+  test:
+    upload:
+      path: /home/ec2-user/upload
