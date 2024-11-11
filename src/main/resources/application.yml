@@ -11,3 +11,26 @@ spring:
       hibernate:
         format_sql: true
     show-sql: true
+  servlet:
+    multipart:
+      enabled: true
+      location: /home/ec2-user/upload
+      max-request-size: 30MB
+      max-file-size: 10MB
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAQFC264AN4OYR7SWC
+      secret-key: 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
+    s3:
+      bucket: nullnull-bucket
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+
+org:
+  test:
+    upload:
+      path: /home/ec2-user/upload
